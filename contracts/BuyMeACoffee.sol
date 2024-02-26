@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: UNLICENSED
-pragma solidity ^0.8.24;
+pragma solidity ^0.8.19;
 
 
 contract BuyMeACoffee {
@@ -26,11 +26,9 @@ contract BuyMeACoffee {
     owner = payable(msg.sender);
  }
 
-/**
- * @dev
- * @param _name 
- * @param _message 
- */
+// @dev
+// @param _name 
+// @param _message 
 
  function getMemos() public view returns (Memo[] memory) {
         return memos;
