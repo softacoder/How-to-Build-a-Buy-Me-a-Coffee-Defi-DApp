@@ -11,13 +11,27 @@ async function getBalance(address) {
   return hre.ethers.utils.formatEther(balanceBigInt);
 }
 
-async function printBalance(balance) {
+async function printBalances(addresses) {
   let idx = 0;
   for (const address of addresses) {
     console.log(`Address ${idx}' balance: `, await getBalance(address));
     idx++;
   }
 }
+
+async function printMemos(memos) {
+  for (const memo of memos) {
+    const timestamp = memo.timestamp;
+    const tipper = memo.name;
+    const tipperAddress = memo.from;
+    const message = memo.message;
+    console.log(
+      `At ${timestamp}, ${tipper} (${tipperAddress}) said: "${message}"`
+    );
+  }
+}
+
+// video at 29:33
 
 async function main() {
   const currentTimestampInSeconds = Math.round(Date.now() / 1000);
