@@ -17,4 +17,4 @@ module.exports = {
   },
 };
 
-// at 58 min do two other command in cli
+// at 58 min do two other command in cli.
